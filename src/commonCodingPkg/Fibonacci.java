@@ -21,7 +21,7 @@ public class Fibonacci {
 	
 	public static int callFiboOptimized(int n) {
 		int a=0, b=1, sum=0;
-		for(int i=0;i<n;i++) {
+		for(int i=0;i<n-1;i++) {
 			sum=a+b;
 			a=b;
 			b=sum;
@@ -34,7 +34,7 @@ public class Fibonacci {
 	public static void main(String args[]) {
 		int n = 15;
 		//System.out.println(callFiboBottomUp(n));
-		//System.out.println(callFiboTopDown(n));
+		System.out.println(callFiboTopDown(n));
 		
 		System.out.println(callFiboOptimized(n));
 

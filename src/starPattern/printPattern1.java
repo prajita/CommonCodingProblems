@@ -30,5 +30,12 @@ public class printPattern1 {
 			System.out.println();
 		}
 		System.out.println("reverse your name::"+reverseString("prajita sinha"));
+		
+		System.out.println("reverse your name::"+replaceWhiteSpace("prajita sinha sinha   prajita"));
+	}
+	private static String replaceWhiteSpace(String string) {
+		
+		return string=string.equals("")? "":string.replaceAll("\\s+", "");
+		 
 	}
 }

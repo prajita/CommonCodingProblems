@@ -1,8 +1,5 @@
 package commonCodingPkg;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class PrintAllSubArraysRecursive {
 	public static void printSubArray(int[] input,int start,int end) {
 		if(end==input.length) {return;}
