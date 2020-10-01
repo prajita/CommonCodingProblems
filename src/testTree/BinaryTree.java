@@ -30,8 +30,7 @@ public class BinaryTree
 		return isBST(root); 
 	} 
 
-	/* Returns true if given search tree is binary 
-	search tree (efficient version) */
+	
 	boolean isBST(Node node) 
 	{ 
 		// traverse the tree in inorder fashion and 

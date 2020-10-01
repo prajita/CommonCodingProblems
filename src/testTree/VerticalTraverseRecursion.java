@@ -22,7 +22,7 @@ class Values
 	int max, min; 
 } 
 
-class VerticalTraverse 
+class VerticalTraverseRecursion 
 { 
 	NodeTree root; 
 	Values val = new Values(); 
@@ -82,7 +82,7 @@ class VerticalTraverse
 	// Driver program to test the above functions 
 	public static void main(String args[]) 
 	{ 
-		VerticalTraverse tree = new VerticalTraverse(); 
+		VerticalTraverseRecursion tree = new VerticalTraverseRecursion(); 
 
 		/* Let us construct the tree shown in above diagram */
 		tree.root = new NodeTree(1); 

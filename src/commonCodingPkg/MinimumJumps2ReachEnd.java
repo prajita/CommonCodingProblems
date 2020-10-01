@@ -18,5 +18,8 @@ public class MinimumJumps2ReachEnd {
 	public static void main(String[] args) {
 		int [] arr= {1,2,4,1,0,3,6,3,7};
 		System.out.println(calculateMinJump(arr,arr.length));
+		String abc="ABVG";
+		abc=abc.replace('A','K');
+		System.out.println(abc);
 	}
 }
