@@ -56,4 +56,8 @@ public class TestBFT {
 		tree.printLevelTraversal();
 	}
 
+	public void checkIfBST() {
+
+	}
+
 }

@@ -6,9 +6,7 @@ public class MaximumSumForKsizeWIndow {
 		int curr_sum=arr[0],global_sum=arr[0];
 		for(int i=0;i<arr.length;i++) {
 			curr_sum=Math.max(arr[i],curr_sum+arr[i]);
-			if(global_sum<curr_sum) {
-				global_sum=curr_sum;
-			}
+			global_sum=Math.max(global_sum, curr_sum);
 		}		
 		return global_sum;
 	 }

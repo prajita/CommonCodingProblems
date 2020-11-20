@@ -61,8 +61,8 @@ public class CheckComparable {
 		arr.add("Zoo");
 
 		Collections.sort(arr);
-		System.out.println("sorted::");
-		arr.forEach(e -> System.out.print(e));
+		System.out.println("\nsorted::");
+		arr.forEach(e -> System.out.print(e+"  "));
 
 		Student s1 = new Student(2, "Prajita");
 		Student s2 = new Student(7, "Mita");
