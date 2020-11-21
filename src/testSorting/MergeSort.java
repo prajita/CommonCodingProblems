@@ -1,4 +1,4 @@
-package commonCodingPkg;
+package testSorting;
 
 public class MergeSort {
 
