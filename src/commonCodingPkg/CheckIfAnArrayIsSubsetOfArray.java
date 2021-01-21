@@ -1,5 +1,8 @@
 package commonCodingPkg;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CheckIfAnArrayIsSubsetOfArray {
 	public static void main(String[] args) {
 		int arr[] = new int[] { 2, 7, 6, 3, 4, 0, 11, 7, 1 };
@@ -24,4 +27,29 @@ public class CheckIfAnArrayIsSubsetOfArray {
 		return true;
 
 	}
+
+	
+	public static void recur(int[] digits, int i, String str)
+    {
+		String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        if (i == digits.length)
+        {
+            System.out.println(str);
+            return;
+        }
+ 
+        int sum = 0;
+ 
+        for (int j = i; j <= Integer.min(i + 1, digits.length - 1); j++)
+        {
+            sum = (sum * 10) + digits[j];
+ 
+            if (sum > 0 && sum <= 26) {
+                recur(digits, j + 1, str + alphabet.charAt(sum - 1));
+            }
+        }
+    }	
+	
+	 
+
 }

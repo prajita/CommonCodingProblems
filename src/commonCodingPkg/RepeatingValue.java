@@ -23,6 +23,7 @@ import java.util.Set;
 
 public class RepeatingValue {
 	public static void main(String args[]) throws Exception {
+		
 		System.out.println("give input ::");
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();

@@ -54,16 +54,7 @@ public class FindPairsOfSumBST {
 		int target = 25;
 		findPair(root, target);
 
-		/*
-		 * 
-		 * public boolean findTarget(TreeNode root, int k) { HashSet<Integer> set = new
-		 * HashSet<Integer>();
-		 * 
-		 * if(root==null)return false; if(findTarget(root.left, k))return true;
-		 * 
-		 * if(set.contains(k-root.val))return true; set.add(root.val);
-		 * if(findTarget(root.right, k))return true; return false; }
-		 */
+	
 
 	}
 }

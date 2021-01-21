@@ -11,59 +11,42 @@ import java.util.stream.Stream;
 
 public class FindMirrorNode {
 	
-	public static void findMirror(Node node,int val) {
-		Queue<Node> q =new LinkedList<Node>();
-		int countofNodesAtlevel=0,numberOfNodes=1;
-		Boolean ifNextLevelHasMirror=false;
-		q.add(node);
-		while(!q.isEmpty()) {
-			Node temp = q.poll();
-			if(temp!=null) {
-				q.add(temp.left);
-				q.add(temp.right);
-			}else {
-				q.add(null);
-				q.add(null);
-			}
-			
-			if(temp.left.data==val||temp.right.data==val) {
-				ifNextLevelHasMirror=true;
-			}
-			countofNodesAtlevel++;
-			if(numberOfNodes==countofNodesAtlevel) {
-				if(ifNextLevelHasMirror) {
-					break;
-				}
-			
-				numberOfNodes=2*numberOfNodes;
-				countofNodesAtlevel=0;
-			}
-			
-		}
-		int index=1;
-		
-		
-		
-//		Stream<Node> st= q.stream();
-//		List<Node> li=st.collect(Collectors.toList());
-//		ArrayList<Node> arr= new ArrayList<Node>(li);
-		
-		
-		ArrayList<Node> arr= new ArrayList<Node>();
-		while(!q.isEmpty()) {
-			arr.add(q.poll());
-		}
-		
-		
-		for(int i=0;i<q.size();i++) {
-			if(arr.get(i).data==val) {
-				index=i;
-				break;
-			}
-		}
-		System.out.println(arr.get(arr.size()-index).data);
+	public static int findMirror(Node root,int val) {
+		 
+	    if (root == null)  
+	        return 0;  
+	    if (root.data == val)  
+	        return val;  
+	    return findMirrorRec(val, root.left, root.right);  
 		
 	}
+	
+	static int findMirrorRec(int target, Node left, Node right)  
+	{  
+	    /* if any of the Node is none then Node itself  
+	    and decendent have no mirror, so return  
+	    none, no need to further explore! */
+	    if (left==null || right==null)  
+	        return 0;  
+	  
+	    /* if left Node is target Node, then return  
+	    right's key (that is mirror) and vice  
+	    versa */
+	    if (left.data == target)  
+	        return right.data;  
+	  
+	    if (right.data == target)  
+	        return left.data;  
+	  
+	    // first recur external Nodes  
+	    int mirror_val = findMirrorRec(target, left.left, right.right);  
+	    if (mirror_val != 0)  
+	        return mirror_val;  
+	  
+	    // if no mirror found, recur internal Nodes  
+	    return findMirrorRec(target, left.right, right.left);  
+	}  
+	  
 	
 	
 	
@@ -79,7 +62,7 @@ public class FindMirrorNode {
 		root.left.left.right=new Node(9);
 		root.left.right.left=new Node(10);
 		root.left.right.right=new Node(11);
-		findMirror(root,8);
+		System.out.println(findMirror(root,4));
 		
 	}
 }

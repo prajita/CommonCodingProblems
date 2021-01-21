@@ -1,19 +1,29 @@
 package commonCodingPkg;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Sort2StringsLexicographically {
 	/***
 	 * 
-	 * Java compareTo() method. The method compareTo() 
-	 * is used for comparing two strings lexicographically in Java
+	 * Java compareTo() method. The method compareTo() is used for comparing two
+	 * strings lexicographically in Java
+	 * 
 	 * @param args
 	 * 
-	 * https://chortle.ccsu.edu/java5/Notes/chap92/ch92_2.html
+	 *             https://chortle.ccsu.edu/java5/Notes/chap92/ch92_2.html
 	 */
 	public static void main(String args[]) {
 		String a = "albany";
 		String b = "albatross";
 
+		List<String> words = new ArrayList<String>();
+		words.add(a);
+		words.add(b);
+		words.add("apple");
 		System.out.println(checkLexicographicalOrder(a, b));
+		words.stream().sorted((n, m)->checkLexicographicalOrder(n,m)).forEach(e->System.out.println(e));
+		
 	}
 
 	private static int checkLexicographicalOrder(String a, String b) {
@@ -34,8 +44,15 @@ public class Sort2StringsLexicographically {
 			}
 		}
 
-		if (M<N) {System.out.println("order is::" + a + "    " + b); return -1;}
-		else if(M>N){System.out.println("order is::" + b + "    " + a);return 1;}
-		else {System.out.println("both equal");return 0;}
+		if (M < N) {
+			System.out.println("order is::" + a + "    " + b);
+			return -1;
+		} else if (M > N) {
+			System.out.println("order is::" + b + "    " + a);
+			return 1;
+		} else {
+			System.out.println("both equal");
+			return 0;
+		}
 	}
 }

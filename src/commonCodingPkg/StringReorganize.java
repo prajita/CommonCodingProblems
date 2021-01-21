@@ -8,7 +8,7 @@ import java.util.TreeSet;
 
 public class StringReorganize {
 	public static void main(String[] args) {
-		String str = "HHHHAAABBBBCCCHHHH";
+		String str = "AVSHKLIUTY";
 		System.out.println(callutil(str));
 	}
 

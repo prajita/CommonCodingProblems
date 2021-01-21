@@ -17,7 +17,6 @@ class NodeT {
 //breadth first traversal
 public class TestBFT {
 	NodeT root;
-
 	void printLevelTraversal() {
 		Queue<NodeT> queue = new LinkedList<NodeT>();
 		queue.add(root);
@@ -34,7 +33,10 @@ public class TestBFT {
 	}
 
 	public static void main(String args[]) {
+
 		TestBFT tree = new TestBFT();
+		System.out.println(tree.getClass().isInstance(tree));
+
 		tree.root = new NodeT(1);
 		tree.root.left = new NodeT(2);
 		tree.root.right = new NodeT(3);
