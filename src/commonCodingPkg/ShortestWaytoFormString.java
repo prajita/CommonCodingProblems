@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class ShortestWaytoFormString {
 	public static void main(String args[]) {
 
+		System.out.println("find the count to reach to target string using sibsequences of a source string..");
+
 		Scanner sc = new Scanner(System.in);
 		String source = sc.next();
 		String target = sc.next();
