@@ -6,7 +6,7 @@ import java.util.List;
 public class CheckIfAnArrayIsSubsetOfArray {
 	public static void main(String[] args) {
 		int arr[] = new int[] { 2, 7, 6, 3, 4, 0, 11, 7, 1 };
-		int subarr[] = new int[] { 6, 0, 7, 12 };
+		int subarr[] = new int[] { 6, 0, 7 };
 
 		System.out.println(checksubset(arr, subarr));
 

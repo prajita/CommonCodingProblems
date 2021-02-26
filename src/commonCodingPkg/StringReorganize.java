@@ -8,7 +8,10 @@ import java.util.TreeSet;
 
 public class StringReorganize {
 	public static void main(String[] args) {
-		String str = "AVSHKLIUTY";
+		String str = "AVYYYYSHKLIUUUTY";
+		System.out.println(str.substring( 1));
+
+		System.out.println(str.substring(0, 1).concat(str.substring(2)));
 		System.out.println(callutil(str));
 	}
 
@@ -18,14 +21,14 @@ public class StringReorganize {
 			map.put(c, map.getOrDefault(c, 0) + 1);
 		}
 
-		Set<Character> set = new TreeSet<Character>();
-		for (char c : str.toCharArray()) {
-			set.add(c);
-		}
-		System.out.println("set::"+set);
+//		Set<Character> set = new TreeSet<Character>();
+//		for (char c : str.toCharArray()) {
+//			set.add(c);
+//		}
+//		System.out.println("set::"+set);
 		PriorityQueue<Character> maxHeap = new PriorityQueue<>((a, b) -> map.get(b) - map.get(a));
 		maxHeap.addAll(map.keySet());
-		System.out.println(maxHeap);
+		//System.out.println(maxHeap);
 		StringBuilder sb = new StringBuilder();
 		while (maxHeap.size() > 1) {
 			char current = maxHeap.remove();
