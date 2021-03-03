@@ -10,11 +10,13 @@ public class ShortestWaytoFormString {
 		String target = sc.next();
 
 		System.out.println(countMinSeq(source, target));
-/**
- * 
- * xyz is given string, output be xzyxz, we need substrings like xz+y+xz
- * so output will be 3
- */
+
+		
+		/**
+		 * 
+		 * xyz is given string, output be xzyxz, we need substrings like xz+y+xz so
+		 * output will be 3
+		 */
 	}
 
 	private static int countMinSeq(String source, String target) {
