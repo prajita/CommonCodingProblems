@@ -1,5 +1,6 @@
 package commonCodingPkg;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ShortestWaytoFormString {
@@ -12,6 +13,7 @@ public class ShortestWaytoFormString {
 		String target = sc.next();
 
 		System.out.println(countMinSeq(source, target));
+		
 /**
  * 
  * xyz is given string, output be xzyxz, we need substrings like xz+y+xz
@@ -41,3 +43,6 @@ public class ShortestWaytoFormString {
 		return count;
 	}
 }
+
+
+
