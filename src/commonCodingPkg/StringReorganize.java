@@ -28,6 +28,7 @@ public class StringReorganize {
 //		System.out.println("set::"+set);
 		PriorityQueue<Character> maxHeap = new PriorityQueue<>((a, b) -> map.get(b) - map.get(a));
 		maxHeap.addAll(map.keySet());
+		
 		//System.out.println(maxHeap);
 		StringBuilder sb = new StringBuilder();
 		while (maxHeap.size() > 1) {
