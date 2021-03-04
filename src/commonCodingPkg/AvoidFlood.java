@@ -18,7 +18,6 @@ public class AvoidFlood {
 		for(int e: res2) {
 			System.out.print(e+"   ");
 		}
-		
 	}
 	
 	public static int[] avoidFloodUtil(int[] rains) {
