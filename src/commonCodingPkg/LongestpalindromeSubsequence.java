@@ -2,7 +2,7 @@ package commonCodingPkg;
 
 
 /*
- * 
+ * LongestPalindromicsubsequence  Longest Palindromic Subsequence
  * diagonal make them 1 for lenth 1
  * 
  * for each length starting from 2 to string length

@@ -13,22 +13,6 @@ public class ShortestWaytoFormString {
 		String target = sc.next();
 
 		System.out.println(countMinSeq(source, target));
-<<<<<<< HEAD
-
-		
-		/**
-		 * 
-		 * xyz is given string, output be xzyxz, we need substrings like xz+y+xz so
-		 * output will be 3
-		 */
-=======
-		
-/**
- * 
- * xyz is given string, output be xzyxz, we need substrings like xz+y+xz
- * so output will be 3
- */
->>>>>>> branch 'master' of https://github.com/prajita/CommonCodingProblems.git
 	}
 
 	private static int countMinSeq(String source, String target) {
