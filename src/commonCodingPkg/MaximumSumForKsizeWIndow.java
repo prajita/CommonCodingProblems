@@ -1,19 +1,37 @@
 package commonCodingPkg;
 
 public class MaximumSumForKsizeWIndow {
-	
-	 public static int findMaxSumInKwindow(int[] arr,int k) {
-		int curr_sum=arr[0],global_sum=arr[0];
-		for(int i=0;i<arr.length;i++) {
-			curr_sum=Math.max(arr[i],curr_sum+arr[i]);
-			global_sum=Math.max(global_sum, curr_sum);
-		}		
-		return global_sum;
-	 }
-    public static void main(String args[] ) throws Exception {
-    	
-//    	int [] arr=new int[]{3,79,9,2,5,10,41,10,24,4,2};
-    	int [] arr=new int[]{-2,3,2,1,8};
-    	System.out.println(findMaxSumInKwindow(arr,3));
-    }
+
+	public static int findMaxSumInKwindow(int[] arr, int k) {
+
+		int sum = 0, tempsum = 0;
+
+		if (arr.length == 0 || k == 0) {
+			return -1;
+		}
+		if (k > arr.length) {
+			for (int i = 0; i < arr.length; i++) {
+				tempsum += arr[i];
+			}
+			return tempsum;
+		}
+		for (int i = 0; i < k; i++) {
+			tempsum += arr[i];
+		}
+		int j = k, i = 0;
+		while (j < arr.length) {
+			tempsum = tempsum + arr[j] - arr[i];
+			sum = Math.max(sum, tempsum);
+			i++;
+			j++;
+		}
+		return Math.max(sum, tempsum);
+	}
+
+	public static void main(String args[]) throws Exception {
+
+		// int [] arr=new int[]{1,13,2,1,8,5, 5, 2, 3, 11, 9};
+		int[] arr = new int[] { 1, 13 };
+		System.out.println(findMaxSumInKwindow(arr, 3));
+	}
 }

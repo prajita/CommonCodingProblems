@@ -1,15 +1,19 @@
 package commonCodingPkg;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ShortestWaytoFormString {
 	public static void main(String args[]) {
+
+		System.out.println("find the count to reach to target string using subsequences of a source string..");
 
 		Scanner sc = new Scanner(System.in);
 		String source = sc.next();
 		String target = sc.next();
 
 		System.out.println(countMinSeq(source, target));
+<<<<<<< HEAD
 
 		
 		/**
@@ -17,6 +21,14 @@ public class ShortestWaytoFormString {
 		 * xyz is given string, output be xzyxz, we need substrings like xz+y+xz so
 		 * output will be 3
 		 */
+=======
+		
+/**
+ * 
+ * xyz is given string, output be xzyxz, we need substrings like xz+y+xz
+ * so output will be 3
+ */
+>>>>>>> branch 'master' of https://github.com/prajita/CommonCodingProblems.git
 	}
 
 	private static int countMinSeq(String source, String target) {
@@ -41,3 +53,6 @@ public class ShortestWaytoFormString {
 		return count;
 	}
 }
+
+
+
