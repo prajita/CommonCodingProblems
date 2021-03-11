@@ -7,6 +7,8 @@ public class PrintAllSubStringsOfString {
 
 	}
 
+	
+
 	private static void printAllSubString(String str) {
 		int n=str.length();
 		for(int i=0;i<=n;i++) {
@@ -17,4 +19,7 @@ public class PrintAllSubStringsOfString {
 		}
 		System.out.println();
 	}
+	
+	
+	
 }
