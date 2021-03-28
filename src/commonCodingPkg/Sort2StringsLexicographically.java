@@ -21,6 +21,12 @@ public class Sort2StringsLexicographically {
 		words.add(a);
 		words.add(b);
 		words.add("apple");
+		words.add("banana");
+		words.add("guava");
+		words.add("banani");
+		words.add("ban");
+		words.add("pinapple");
+		
 		System.out.println(checkLexicographicalOrder(a, b));
 		words.stream().sorted((n, m)->checkLexicographicalOrder(n,m)).forEach(e->System.out.println(e));
 		
@@ -54,5 +60,7 @@ public class Sort2StringsLexicographically {
 			System.out.println("both equal");
 			return 0;
 		}
+		
+		//return a.compareTo(b);
 	}
 }

@@ -30,6 +30,7 @@ public class PermutationsOfString {
 			for (int i = fixed; i < str.length(); i++) {
 				str=swap(str, i, fixed);
 				callperm(str, fixed + 1, p);
+				str=swap(str, i, fixed);
 			}
 		}
 	}

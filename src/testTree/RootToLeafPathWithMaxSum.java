@@ -9,38 +9,38 @@ public class RootToLeafPathWithMaxSum {
 		printPath(root, sum);
 	}
 
-	public static boolean printPath(Node root, int sum) {
-		if (sum == 0) {
-			return true;
-		}
-		if (root == null) {
-			return false;
-		}
-		// recur for left and right subtree with reduced sum
-		boolean left = printPath(root.left, sum - root.data);
-		boolean right = printPath(root.right, sum - root.data);
-
-		// print current node if it lies on path having given sum
-		if (left || right) {
-			System.out.print(root.data + " ");
-		}
-		return left || right;
-	}
-
+	
+	
 	// Function to calculate maximum root-to-leaf sum in a binary tree
-	public static int rootToLeafSum(Node root) {
-		if (root == null) {
-			return 0;
+		public static int rootToLeafSum(Node root) {
+			
+			if(root==null)return 0;
+			
+			int left= rootToLeafSum(root.left);
+			int right= rootToLeafSum(root.right);
+			
+			return Math.max(left, right)+root.data;
 		}
-		// calculate maximum node-to-leaf sum for left child
-		int left = rootToLeafSum(root.left);
+		
 
-		// calculate maximum node-to-leaf sum for right child
-		int right = rootToLeafSum(root.right);
+		public static boolean printPath(Node root, int sum) {
+			
+			if( sum==0) {
+				return true;
+			}
+			if(root==null)return false;
 
-		// consider maximum sum child
-		return (left > right ? left : right) + root.data;
-	}
+			
+			boolean left=printPath( root.left,  sum-root.data) ;
+			boolean right=printPath( root.right,  sum-root.data) ;
+			
+			if(left||right) {
+				System.out.print(root.data + " ");
+			}
+			
+			return left||right;
+		}
+
 
 	public static void main(String args[]) {
 

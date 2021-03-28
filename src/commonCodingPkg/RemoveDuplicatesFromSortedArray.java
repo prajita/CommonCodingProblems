@@ -4,8 +4,8 @@ public class RemoveDuplicatesFromSortedArray {
 	public static void main(String args[]) {
 
 		int[] arr = new int[] { 2, 7, 8, 9, 10,  10,13, 13, 13, 16, 19 };
-		int  index =removeDuplicates(arr, arr.length);
-		for (int i=0; i<index; i++) 
+		int  end_index =removeDuplicates(arr, arr.length);
+		for (int i=0; i<end_index; i++) 
 	        System.out.print(arr[i]+" "); 
 		
 	}
