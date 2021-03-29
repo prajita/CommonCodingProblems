@@ -3,66 +3,6 @@ package testTree;
 public class LowestCommonAncestor {
 	
 
-	static class NodeWrapper {
-		public Node node;
-
-		NodeWrapper(Node node) {
-			this.node = node;
-		}
-	}
-
-	public static boolean isNodePresent(Node root, Node node) {
-		// base case
-		if (root == null) {
-			return false;
-		}
-
-		if (root == node) {
-			return true;
-		}
-
-		return isNodePresent(root.left, node) || isNodePresent(root.right, node);
-	}
-
-	public static boolean findLCA(Node root, NodeWrapper lca, Node x, Node y) {
-		if (root == null) {
-			return false;
-		}
-
-		if (root == x || root == y) {
-			lca.node = root;
-			return true;
-		}
-
-		boolean left = findLCA(root.left, lca, x, y);
-
-		boolean right = findLCA(root.right, lca, x, y);
-
-		
-		if (left && right) {
-			lca.node = root;
-		}
-
-		return left || right;
-	}
-
-	public static void findLCA(Node root, Node x, Node y) {
-		Node lca = null;
-
-		NodeWrapper LCA = new NodeWrapper(lca);
-
-		if (isNodePresent(root, y) && isNodePresent(root, x)) {
-			findLCA(root, LCA, x, y);
-			lca = LCA.node;
-		}
-
-		if (lca != null) {
-			System.out.println("LCA is " + lca.data);
-		} else {
-			System.out.print("LCA do not exist\n");
-		}
-	}
-
 	public static void main(String[] args) {
 	
 
@@ -75,11 +15,29 @@ public class LowestCommonAncestor {
 		root.right.left.left = new Node(7);
 		root.right.right.right = new Node(8);
 
-		findLCA(root, root.right.left.left, root.right.right);
-		findLCA(root, root.right.left.left, new Node(10));
-		findLCA(root, root.right.left.left, root.right.left.left);
-		findLCA(root, root.right.left.left, root.right.left);
-		findLCA(root, root.left, root.right.left);
+		System.out.println(findLCA(root, root.right.left.left, root.right.right).data);
+//		System.out.println(findLCA(root, root.right.left.left, new Node(10)).data);
+//		System.out.println(findLCA(root, root.right.left.left, root.right.left.left).data);
+//		System.out.println(findLCA(root, root.right.left.left, root.right.left).data);
+//		System.out.println(findLCA(root, root.left, root.right.left).data);
+	}
+
+	private static Node findLCA(Node root, Node p, Node q) {
+		
+		
+		if(root==null)return root;
+		if(root.data==p.data || root.data==q.data) {
+			return root;
+		}
+		
+		
+		Node left=findLCA( root.left, p,  q) ;
+		Node right =findLCA( root.right,  p,  q) ;
+		
+		if(left!=null && right!=null)return root;
+		
+		return left!=null? left:right;
+		
 	}
 
 }
